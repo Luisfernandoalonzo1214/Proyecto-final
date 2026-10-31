@@ -1,0 +1,56 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Compilar sistema completo",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-Wall",
+                "-Wextra",
+                "-std=c++17",
+                "-I${workspaceFolder}",
+                "-I${workspaceFolder}\\src",
+                "${workspaceFolder}\\Main.cpp",
+                "${workspaceFolder}\\estudiantes.cpp",
+                "${workspaceFolder}\\cursos_notas.cpp",
+                "${workspaceFolder}\\procesamiento.cpp",
+                "${workspaceFolder}\\persistencia.cpp",
+                "${workspaceFolder}\\src\\reportes.cpp",
+                "-o",
+                "${workspaceFolder}\\sistema.exe"
+            ],
+            "options": { "cwd": "${workspaceFolder}" },
+            "problemMatcher": [ "$gcc" ],
+            "group": { "kind": "build", "isDefault": true },
+            "detail": "Compila todos los modulos y genera sistema.exe"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Compilar pruebas",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-Wall",
+                "-Wextra",
+                "-std=c++17",
+                "-I${workspaceFolder}",
+                "-I${workspaceFolder}\\src",
+                "${workspaceFolder}\\pruebas\\pruebas.cpp",
+                "${workspaceFolder}\\estudiantes.cpp",
+                "${workspaceFolder}\\cursos_notas.cpp",
+                "${workspaceFolder}\\procesamiento.cpp",
+                "${workspaceFolder}\\persistencia.cpp",
+                "-o",
+                "${workspaceFolder}\\pruebas.exe"
+            ],
+            "options": { "cwd": "${workspaceFolder}" },
+            "problemMatcher": [ "$gcc" ],
+            "group": "build",
+            "detail": "Compila las pruebas automaticas (pruebas.exe)"
+        }
+    ]
+}
